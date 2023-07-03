@@ -1,5 +1,5 @@
 {
-  "name": "ai-powered-document-interaction-application",
+  "name": "ai-powered-document-interaction",
   "version": "1.0.0",
   "description": "A web application that allows users to interact with their documents using an AI chatbot.",
   "main": "index.js",
@@ -11,14 +11,18 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^1.25.2",
-    "next": "11.1.2",
+    "axios": "^0.24.0",
+    "next": "12.0.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "openai": "^0.27.0"
+    "tailwindcss": "^2.2.19",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.3.11",
+    "pdf-parse": "^1.1.1"
   },
   "devDependencies": {
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "eslint": "8.4.1",
+    "eslint-config-next": "12.0.4"
   },
   "license": "MIT",
   "private": true

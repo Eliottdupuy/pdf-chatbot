@@ -1,9 +1,6 @@
 ```javascript
 import '../styles/globals.css'
 import { Provider } from 'next-auth/client'
-import { initSupabase } from '../lib/supabase'
-
-initSupabase()
 
 function MyApp({ Component, pageProps }) {
   return (

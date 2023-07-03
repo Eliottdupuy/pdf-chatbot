@@ -1,61 +1,43 @@
 ```javascript
 import { useState } from 'react';
-import { supabaseClient } from '../lib/supabase';
+import { updateSettings } from '../lib/settings';
 import styles from '../styles/Settings.module.css';
 
 export default function Settings() {
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState('');
+    const [detailLevel, setDetailLevel] = useState('');
+    const [languageType, setLanguageType] = useState('');
 
-  const handleSettingsUpdate = async (event) => {
-    event.preventDefault();
-    setLoading(true);
-    setMessage('');
+    const handleUpdate = async (event) => {
+        event.preventDefault();
+        const result = await updateSettings({ detailLevel, languageType });
+        if (result) {
+            alert('Settings updated successfully');
+        } else {
+            alert('Failed to update settings');
+        }
+    };
 
-    const { data, error } = await supabaseClient
-      .from('settings')
-      .update({
-        chatbot_response_speed: event.target.chatbotResponseSpeed.value,
-        chatbot_response_style: event.target.chatbotResponseStyle.value,
-      })
-      .match({ user_id: supabaseClient.auth.user().id });
+    return (
+        <div className={styles.container}>
+            <form id="settingsForm" onSubmit={handleUpdate}>
+                <label htmlFor="detailLevel">Detail Level:</label>
+                <select id="detailLevel" value={detailLevel} onChange={(e) => setDetailLevel(e.target.value)}>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
 
-    if (error) {
-      setMessage('Error updating settings.');
-    } else if (data) {
-      setMessage('Settings updated successfully.');
-    }
+                <label htmlFor="languageType">Language Type:</label>
+                <select id="languageType" value={languageType} onChange={(e) => setLanguageType(e.target.value)}>
+                    <option value="formal">Formal</option>
+                    <option value="informal">Informal</option>
+                    <option value="technical">Technical</option>
+                    <option value="non-technical">Non-Technical</option>
+                </select>
 
-    setLoading(false);
-  };
-
-  return (
-    <div className={styles.container}>
-      <form onSubmit={handleSettingsUpdate}>
-        <label htmlFor="chatbotResponseSpeed">Chatbot Response Speed:</label>
-        <input
-          type="number"
-          id="chatbotResponseSpeed"
-          name="chatbotResponseSpeed"
-          min="1"
-          max="5"
-          required
-        />
-
-        <label htmlFor="chatbotResponseStyle">Chatbot Response Style:</label>
-        <select id="chatbotResponseStyle" name="chatbotResponseStyle" required>
-          <option value="friendly">Friendly</option>
-          <option value="professional">Professional</option>
-          <option value="casual">Casual</option>
-        </select>
-
-        <button type="submit" disabled={loading}>
-          {loading ? 'Loading...' : 'Update Settings'}
-        </button>
-      </form>
-
-      {message && <p>{message}</p>}
-    </div>
-  );
+                <button type="submit">Update Settings</button>
+            </form>
+        </div>
+    );
 }
 ```
