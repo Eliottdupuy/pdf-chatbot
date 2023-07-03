@@ -1,10 +1,11 @@
 ```javascript
 import { supabaseClient } from './supabase';
 
-export async function uploadDocument(userId, document) {
+export async function uploadDocument(file, user) {
   const { data, error } = await supabaseClient
+    .storage
     .from('documents')
-    .insert([{ user_id: userId, document }]);
+    .upload(`${user.id}/${file.name}`, file);
 
   if (error) {
     throw error;
@@ -13,25 +14,11 @@ export async function uploadDocument(userId, document) {
   return data;
 }
 
-export async function getDocument(documentId) {
+export async function retrieveDocument(filePath) {
   const { data, error } = await supabaseClient
+    .storage
     .from('documents')
-    .select('*')
-    .eq('id', documentId)
-    .single();
-
-  if (error) {
-    throw error;
-  }
-
-  return data;
-}
-
-export async function getUserDocuments(userId) {
-  const { data, error } = await supabaseClient
-    .from('documents')
-    .select('*')
-    .eq('user_id', userId);
+    .download(filePath);
 
   if (error) {
     throw error;

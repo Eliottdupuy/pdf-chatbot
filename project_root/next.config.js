@@ -1,4 +1,3 @@
-```javascript
 module.exports = {
   reactStrictMode: true,
   env: {
@@ -6,5 +5,7 @@ module.exports = {
     SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,
     OPENAI_API_KEY: process.env.OPENAI_API_KEY,
   },
-}
-```
+  future: {
+    webpack5: true,
+  },
+};

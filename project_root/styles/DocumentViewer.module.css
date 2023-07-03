@@ -1,34 +1,29 @@
 .documentViewer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem auto;
-  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 20px;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-  max-width: 800px;
+  border-radius: 5px;
+  background-color: #fff;
 }
 
-.documentViewer h1 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 1rem;
+.documentViewer h1,
+.documentViewer h2,
+.documentViewer h3,
+.documentViewer h4,
+.documentViewer h5,
+.documentViewer h6 {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .documentViewer p {
-  font-size: 1rem;
-  color: #666;
+  margin-bottom: 10px;
   line-height: 1.5;
 }
 
-.documentViewer .documentContent {
-  margin-top: 1rem;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #fff;
-  width: 100%;
-  overflow: auto;
+.documentViewer img {
+  max-width: 100%;
+  height: auto;
 }

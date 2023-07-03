@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { uploadDocument } from '../lib/documents';
 import styles from '../styles/DocumentUploader.module.css';
 
-export default function DocumentUploader() {
+const DocumentUploader = () => {
   const [file, setFile] = useState(null);
   const [uploading, setUploading] = useState(false);
 
@@ -35,5 +35,7 @@ export default function DocumentUploader() {
       </button>
     </div>
   );
-}
+};
+
+export default DocumentUploader;
 ```

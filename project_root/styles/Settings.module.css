@@ -1,40 +1,40 @@
 .settingsContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 20px;
-}
-
-.settingsTitle {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
+  align-items: center;
+  padding: 2rem;
 }
 
 .settingsForm {
-  display: flex;
-  flex-direction: column;
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
 }
 
-.settingsForm input {
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+.settingsForm input,
+.settingsForm select {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
 }
 
 .settingsForm button {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
+  width: 100%;
+  padding: 0.5rem;
   background-color: #0070f3;
   color: white;
+  border: none;
+  border-radius: 0.25rem;
   cursor: pointer;
 }
 
 .settingsForm button:hover {
   background-color: #0051bb;
+}
+
+.settingsForm button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
 }
