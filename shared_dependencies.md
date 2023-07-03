@@ -1,30 +1,13 @@
-**Shared Dependencies:**
+1. CSS Classes: Both "style.css" and "tailwind.css" will contain CSS classes that are used in "index.html" and "layout.html". These classes are shared dependencies as they define the styling of the HTML elements.
 
-1. **Exported Variables:**
-   - `supabaseClient`: Exported from `lib/supabase.js` and used in various files for database operations.
-   - `userSession`: Exported from `lib/auth.js` and used in various files for user authentication and session management.
+2. HTML Element IDs: "index.html" and "layout.html" will contain HTML elements with unique IDs. These IDs are shared dependencies as they are used to target specific elements in the JavaScript functions and CSS files.
 
-2. **Data Schemas:**
-   - `User`: Used in `lib/auth.js`, `pages/signup.js`, `pages/signin.js`, and `pages/dashboard.js`.
-   - `Document`: Used in `lib/documents.js`, `pages/api/documents.js`, `pages/document.js`, and `components/DocumentViewer.js`.
+3. Package Dependencies: "package.json" will contain the list of dependencies for the project. This includes Tailwind CSS and PostCSS, which are shared dependencies as they are used in "tailwind.config.js" and "postcss.config.js".
 
-3. **DOM Element IDs:**
-   - `signupForm`: Used in `pages/signup.js`.
-   - `signinForm`: Used in `pages/signin.js`.
-   - `documentUploader`: Used in `components/DocumentUploader.js`.
-   - `documentViewer`: Used in `components/DocumentViewer.js`.
-   - `chatbot`: Used in `components/Chatbot.js`.
+4. Configuration Variables: "tailwind.config.js" and "postcss.config.js" will contain configuration variables for Tailwind CSS and PostCSS. These variables are shared dependencies as they define the behavior of these tools.
 
-4. **Message Names:**
-   - `SIGNUP_SUCCESS`: Used in `pages/signup.js`.
-   - `SIGNIN_SUCCESS`: Used in `pages/signin.js`.
-   - `UPLOAD_SUCCESS`: Used in `components/DocumentUploader.js`.
-   - `CHATBOT_RESPONSE`: Used in `components/Chatbot.js`.
+5. Function Names: If there are any JavaScript functions used in the project, their names will be shared dependencies as they can be called from different files.
 
-5. **Function Names:**
-   - `initSupabase`: Defined in `lib/supabase.js` and used in `pages/_app.js`.
-   - `signupUser`: Defined in `lib/auth.js` and used in `pages/signup.js`.
-   - `signinUser`: Defined in `lib/auth.js` and used in `pages/signin.js`.
-   - `uploadDocument`: Defined in `lib/documents.js` and used in `components/DocumentUploader.js`.
-   - `getDocument`: Defined in `lib/documents.js` and used in `pages/document.js` and `components/DocumentViewer.js`.
-   - `getChatbotResponse`: Defined in `lib/chatbot.js` and used in `components/Chatbot.js`.
+6. Message Names: If the project uses any kind of messaging system (like events or callbacks), the names of these messages will be shared dependencies.
+
+7. File Paths: The paths to the CSS files ("style.css" and "tailwind.css") in the "index.html" and "layout.html" files are shared dependencies, as they link the HTML files to the CSS files.
