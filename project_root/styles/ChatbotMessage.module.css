@@ -1,0 +1,29 @@
+.chatbotMessage {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.chatbotMessage.user {
+  justify-content: flex-end;
+}
+
+.chatbotMessage.bot {
+  justify-content: flex-start;
+}
+
+.chatbotMessage .messageContent {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.chatbotMessage.user .messageContent {
+  background-color: #0070f3;
+  color: white;
+}
+
+.chatbotMessage.bot .messageContent {
+  background-color: #eaeaea;
+  color: black;
+}

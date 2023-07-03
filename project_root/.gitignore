@@ -1,0 +1,21 @@
+# .gitignore
+
+# Ignore Next.js build output
+.next
+
+# Ignore development files
+node_modules
+npm-debug.log
+
+# Ignore environment variables
+.env.local
+
+# Ignore IDE specific files
+.idea
+.vscode
+*.swp
+*.swo
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
