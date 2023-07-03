@@ -1,0 +1,34 @@
+.documentViewer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  max-width: 800px;
+}
+
+.documentViewer h1 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.documentViewer p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.documentViewer .documentContent {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  width: 100%;
+  overflow: auto;
+}
